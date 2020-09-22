@@ -1,0 +1,6 @@
+<h1>We start with a single user account<h1>
+<p>Tag <%= @user %> = name: <%= @user.name %>, email: <%= @user.email %></p>
+
+<p>user.courses gives an array of courses this user has visited</p>
+<p>user.courses[0] will give us our first course to work with </p>
+<p><%= @user.courses[0]%> = name: <%= @user.courses[0].name %>, hole_count: <%= @user.courses[0].hole_count %></p>
