@@ -5,6 +5,7 @@ class CreateHoles < ActiveRecord::Migration[6.0]
       t.integer :round_id
       t.integer :number
       t.integer :par
+      t.string :hole_name
       t.integer :mens_handicap
       t.integer :womens_handicap
       t.timestamps

@@ -4,6 +4,8 @@ class CreateHoleScores < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :hole_id
       t.integer :score
+      t.datetime :start_time
+      t.datetime :end_time
     end
   end
 end

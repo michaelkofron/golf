@@ -3,7 +3,7 @@ class CreateTees < ActiveRecord::Migration[6.0]
     create_table :tees do |t|
       t.string :name
       t.integer :hole_id
-      t.decimal :rating, precision: 3, scale: 1  #3 signifant digits, one decimal place
+      t.float :rating
       t.integer :slope
       t.integer :distance
     end

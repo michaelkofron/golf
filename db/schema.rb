@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_09_22_170428) do
     t.integer "user_id"
     t.integer "hole_id"
     t.integer "score"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "holes", force: :cascade do |t|
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_170428) do
     t.integer "round_id"
     t.integer "number"
     t.integer "par"
+    t.string "hole_name"
     t.integer "mens_handicap"
     t.integer "womens_handicap"
     t.datetime "created_at", precision: 6, null: false
@@ -68,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_170428) do
   create_table "tees", force: :cascade do |t|
     t.string "name"
     t.integer "hole_id"
-    t.decimal "rating", precision: 3, scale: 1
+    t.float "rating"
     t.integer "slope"
     t.integer "distance"
   end
