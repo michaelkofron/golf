@@ -4,5 +4,5 @@ class Hole < ApplicationRecord
     has_many :hole_scores
     has_many :shots
     belongs_to :course
-    belongs_to :round
+    #belongs_to :round
 end

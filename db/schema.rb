@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2020_09_22_170428) do
 
   create_table "holes", force: :cascade do |t|
     t.integer "course_id"
-    t.integer "round_id"
     t.integer "number"
     t.integer "par"
     t.string "hole_name"
