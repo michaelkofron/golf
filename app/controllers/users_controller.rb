@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+
     def sign_in
         user = User.find_by(email: params[:email])
 
