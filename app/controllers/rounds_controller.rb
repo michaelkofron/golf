@@ -3,7 +3,7 @@ class RoundsController < ApplicationController
     def create
         user = User.find_by(key: params[:key])
 
-        course = Course.find_by(name: params[:courseName])
+        course = Course.find(params[:courseId])
 
         round = Round.create(course_id: course.id, user_id: user.id, score: 0, start_time: DateTime.now, end_time: nil)
 
