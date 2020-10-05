@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   #round
   post "/createround", to: "rounds#create"
 
+  #shot
+  post "/createshot", to: "shots#create"
+
   #holes
   post "/createhole", to: "holes#create"
 
