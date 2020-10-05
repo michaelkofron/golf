@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   #courses
   post "/createcourse", to: "courses#create"
+  get "/getcourses", to: "courses#get"
 
   #round
   post "/createround", to: "rounds#create"
