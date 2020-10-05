@@ -17,4 +17,10 @@ class CoursesController < ApplicationController
 
         render json: courses
     end
+
+    def get_specific
+        course = Course.find(params[:id])
+
+        render json: {course: course, holes: course.holes}
+    end
 end
