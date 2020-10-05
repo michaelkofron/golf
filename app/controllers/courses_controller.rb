@@ -11,4 +11,10 @@ class CoursesController < ApplicationController
             render json: {done: false}
         end
     end
+
+    def get
+        courses = Course.last(5)
+
+        render json: courses
+    end
 end
