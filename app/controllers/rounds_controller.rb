@@ -1,6 +1,6 @@
 class RoundsController < ApplicationController
     skip_before_action :verify_authenticity_token
-    
+
     def create
         user = User.find_by(key: params[:key])
 
@@ -13,5 +13,22 @@ class RoundsController < ApplicationController
         else
             render json: {done: false}
         end
+    end
+
+    def update
+        round = Round.find(params[:roundId])
+
+        course_par = 0
+
+        round.holes.each do |x|
+            course_par += x.par
+        end
+
+        score = round.shots.count - course_par
+
+        round.update_attribute(:end_time, DateTime.now)
+        round.update_attribute(:score, score)
+
+        render json: {done: true}
     end
 end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   #round
   post "/createround", to: "rounds#create"
+  post "/updateround", to: "rounds#update"
 
   #shot
   post "/createshot", to: "shots#create"
