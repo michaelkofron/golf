@@ -15,4 +15,12 @@ class HolesController < ApplicationController
 
     end
 
+    def info
+        course = Course.find(params[:courseId])
+        hole = course.holes[params[:holeNumber].to_i - 1]
+        tee = hole.tees.find_by(params[:teeName])
+
+        render json: {course: course, hole: hole, tee: tee}
+    end
+
 end

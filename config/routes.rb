@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   #holes
   post "/createhole", to: "holes#create"
+  get "/getinfo/:courseId/:holeNumber/:teeName", to: "holes#info"
 
   #tees
   post "/createtee", to: "tees#create"
