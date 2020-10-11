@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user = User.create(name: "Michael Kofron", email: "kofronmichael@gmail.com")
+user = User.create(name: "Michael Bofron", email: "super@gmail.com")
 
 
 #create the course
 
-course = Course.create(name: "TPC TestCourse", sub_course_name: "test_course", hole_count: 18)
+course = Course.create(name: "TPC BigTest", sub_course_name: "test_course", hole_count: 18)
 
 #user creates a round
 
