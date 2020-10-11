@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   #tees
   post "/createtee", to: "tees#create"
 
+  #hole_scores
+
+  post "/createholescore", to: "hole_scores#create"
   
 
 end
