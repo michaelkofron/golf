@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   #courses
   post "/createcourse", to: "courses#create"
   get "/getcourses", to: "courses#get"
-  post "/getspecific", to: "courses#get_specific"
+  post "/getspecific/:id", to: "courses#get_specific"
 
   #round
   post "/createround", to: "rounds#create"
