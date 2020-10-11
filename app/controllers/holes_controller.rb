@@ -23,9 +23,10 @@ class HolesController < ApplicationController
 
         #what
 
-        if (!course.holes[params[:holeNumber].to_i]){
+        if !course.holes[params[:holeNumber].to_i]
             last = true
-        }
+
+        end
 
         render json: {course: course, hole: hole, tee: tee, last: last}
     end
