@@ -20,10 +20,7 @@ class CoursesController < ApplicationController
 
     def get_specific
         course = Course.find(params[:id])
-        user = User.find_by(key: params[:key])
 
-        round = Round.create(course_id: course.id, user_id: user.id, score: nil, start_time: DateTime.now, end_time: nil)
-
-        render json: {course: course, holes: course.holes, round_id: round.id}
+        render json: {course: course, holes: course.holes, tees: course.tees}
     end
 end
