@@ -20,7 +20,7 @@ class RoundsController < ApplicationController
 
         course_par = 0
 
-        round.holes.each do |x|
+        round.course.holes.each do |x|
             course_par += x.par
         end
 
