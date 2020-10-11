@@ -19,8 +19,15 @@ class HolesController < ApplicationController
         course = Course.find(params[:courseId])
         hole = course.holes[params[:holeNumber].to_i - 1]
         tee = hole.tees.find_by(name: params[:teeName])
+        last = false
 
-        render json: {course: course, hole: hole, tee: tee}
+        #what
+
+        if (!course.holes[params[:holeNumber].to_i]){
+            last = true
+        }
+
+        render json: {course: course, hole: hole, tee: tee, last: last}
     end
 
 end
