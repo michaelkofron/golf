@@ -18,13 +18,11 @@ class RoundsController < ApplicationController
     def update
         round = Round.find(params[:roundId])
 
-        course_par = 0
+        score = 0
 
-        round.course.holes.each do |x|
-            course_par += x.par
+        round.hole_scores.each do |x|
+            score += x.score
         end
-
-        score = round.shots.count - course_par
 
         round.update_attribute(:end_time, DateTime.now)
         round.update_attribute(:score, score)
