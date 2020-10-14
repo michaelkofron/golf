@@ -29,7 +29,7 @@ class HolesController < ApplicationController
 
         end
 
-        render json: {course: course, hole: hole, tee: tee, last: last}
+        render json: {course: course, hole: hole, tee: tee[0], last: last}
     end
 
 end
