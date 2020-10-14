@@ -19,7 +19,8 @@ class HolesController < ApplicationController
         course = Course.find(params[:courseId])
         hole = course.holes[params[:holeNumber].to_i - 1]
         #tee = hole.tees.find_by(name: params[:teeName])
-        tee = hole.tees.where("lower(name) = ?", params[:teeName].downcase).first
+        tees = hole.tees
+        tee = tees.where("lower(name) = ?", params[:teeName].downcase).first
         last = false
 
         #what
@@ -29,7 +30,7 @@ class HolesController < ApplicationController
 
         end
 
-        render json: {course: course, hole: hole, tee: tee[0], last: last}
+        render json: {course: course, hole: hole, tee: tee, last: last}
     end
 
 end
